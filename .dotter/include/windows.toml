@@ -3,3 +3,6 @@
 
 [lazygit.files]
 "lazygit/config.yml" = { target = "~/AppData/Local/lazygit/config.yml", type = "symbolic" }
+
+[yazi.files]
+"yazi/yazi.toml" = { target = "~/AppData/Roaming/yazi/config/yazi.toml", type = "symbolic" }
