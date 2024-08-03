@@ -30,5 +30,9 @@ depends = []
 [yazi.files]
 "yazi/yazi.toml" = { target = "~/.config/yazi/yazi.toml", type = "symbolic" }
 
+# git 配置-----------------------------------------------------
+[git.files]
+"git/.gitmessage" = "~/.gitmessage"
+
 [settings]
 default_target_type = "automatic"
