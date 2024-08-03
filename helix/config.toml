@@ -12,18 +12,23 @@ undercurl = true
 auto-completion = true
 auto-info = true
 color-modes = true
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
 [editor.lsp]
 display-messages = true
+
 [editor.soft-wrap]
 enable = true
+
 [editor.indent-guides]
 render = true
 character = "╎" # Some characters that work well: "▏", "╎", "┆", "┊"
 skip-levels = 0
+
 [editor.statusline]
 # [#2869] file-type-icon
 left = [
@@ -54,5 +59,6 @@ separator = "│"
 ## Use system clipboard
 p = "paste_clipboard_before"
 y = "yank_main_selection_to_clipboard"
+
 [keys.normal.space]
 "." = "file_picker_in_current_buffer_directory"
