@@ -91,4 +91,9 @@ $env.config = {
         command_not_found: { null } # return an error message when a command is not found
     }
 }
+
 use ~/.config/starship/init.nu
+source ($nu.default-config-dir | path join 'scripts/git-completions.nu')
+source ($nu.default-config-dir | path join 'scripts/scoop-completions.nu')
+source ($nu.default-config-dir | path join 'scripts/rg-completions.nu')
+source ($nu.default-config-dir | path join 'scripts/bat-completions.nu')
