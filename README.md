@@ -18,3 +18,5 @@ cp .dotter/<os>.toml local.toml
 ```bash
 ./dotter deploy
 ```
+## 参考
+1. https://github.com/SuperCuber/dotter
