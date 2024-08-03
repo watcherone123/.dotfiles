@@ -1,6 +1,7 @@
 [helpers]
 hello = ".dotter/helpers/hello.rhai"
 
+# helix 配置-----------------------------------------------------
 [helix]
 depends = []
 
@@ -8,6 +9,15 @@ depends = []
 "helix/config.toml" = "~/.config/helix/config.toml"
 
 [helix.variables]
+
+# wezterm 配置-----------------------------------------------------
+[wezterm]
+depends = []
+
+[wezterm.files]
+"wezterm" = "~/.config/wezterm"
+
+[wezterm.variables]
 
 [settings]
 default_target_type = "automatic"
