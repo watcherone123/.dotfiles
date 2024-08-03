@@ -21,5 +21,7 @@ cp .dotter/<os>.toml local.toml
 ## 软件安装
 - [nushell](./docs/nushell.md) 跨平台的shell
 - [wezterm](./docs/wezterm.md)跨平台终端
+- [starship](./docs/starship.md)跨平台终端美化
 ## 参考
 1. https://github.com/SuperCuber/dotter
+

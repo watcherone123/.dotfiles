@@ -36,3 +36,16 @@ Alt+[↑]         --放大字体
 Alt+[↓]         --缩小字体
 Alt+r           --重置字体大小
 ```
+
+## 相关链接
+
+- https://github.com/rxi/lume
+- https://github.com/catppuccin/wezterm
+- [wez/wezterm#628 (comment)](https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614)
+- [wez/wezterm#628 (reply in thread)](https://github.com/wez/wezterm/discussions/628#discussioncomment-5942139)
+- [wez/wezterm#628 (comment)](https://github.com/wez/wezterm/discussions/628#discussioncomment-3649195)
+
+## 原作者仓库
+
+- https://github.com/KevinSilvester/wezterm-config
+- https://github.com/QianSong1/wezterm-config

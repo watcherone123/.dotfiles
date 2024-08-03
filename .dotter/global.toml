@@ -11,13 +11,16 @@ depends = []
 [helix.variables]
 
 # wezterm 配置-----------------------------------------------------
-[wezterm]
-depends = []
-
 [wezterm.files]
 "wezterm" = "~/.config/wezterm"
 
-[wezterm.variables]
+# starship 配置-----------------------------------------------------
+[starship.files]
+"starship/starship.toml" = "~/.config/starship.toml"
+
+# nushell 配置-----------------------------------------------------
+[nushell.files]
+"nushell" = "~/AppData/Roaming/nushell"
 
 [settings]
 default_target_type = "automatic"
