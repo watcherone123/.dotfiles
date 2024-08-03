@@ -1,0 +1,13 @@
+[helpers]
+hello = ".dotter/helpers/hello.rhai"
+
+[helix]
+depends = []
+
+[helix.files]
+"helix/config.toml" = "~/.config/helix/config.toml"
+
+[helix.variables]
+
+[settings]
+default_target_type = "automatic"
