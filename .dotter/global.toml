@@ -22,5 +22,9 @@ depends = []
 [nushell.files]
 "nushell" = "~/AppData/Roaming/nushell"
 
+# lazygit 配置-----------------------------------------------------
+[lazygit.files]
+"lazygit/config.yml" = { target = "~/.config/lazygit/config.yml", type = "symbolic" }
+
 [settings]
 default_target_type = "automatic"

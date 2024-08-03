@@ -11,7 +11,10 @@ git clone https://github.com/watcherone123/.dotfiles.git
 ```bash
 cp .dotter/<os>.toml local.toml
 ```
+3. [dotter使用技巧](./docs/dotter.md)
+
 ## 运行
+
 - Unix(x86): ./dotter
 - Windows: ./dotter.exe
 - Unix(arm): ./dotter.arm
@@ -22,6 +25,7 @@ cp .dotter/<os>.toml local.toml
 - [nushell](./docs/nushell.md) 跨平台的shell
 - [wezterm](./docs/wezterm.md)跨平台终端
 - [starship](./docs/starship.md)跨平台终端美化
+- [laygit](./docs/lazygit.md)
 ## 参考
 1. https://github.com/SuperCuber/dotter
 

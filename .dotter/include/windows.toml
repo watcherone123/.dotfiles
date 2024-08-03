@@ -1,2 +1,5 @@
 [helix.files]
 "helix/config.toml" = "~/AppData/Roaming/helix/config.toml"
+
+[lazygit.files]
+"lazygit/config.yml" = { target = "~/AppData/Local/lazygit/config.yml", type = "symbolic" }

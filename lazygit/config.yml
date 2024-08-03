@@ -1,0 +1,25 @@
+# Config relating to the Lazygit UI
+gui:
+  # One of 'auto' (default) | 'en' | 'zh-CN' | 'zh-TW' | 'pl' | 'nl' | 'ja' | 'ko' | 'ru'
+  language: en
+
+customCommands:
+  - key: '<c-p>'
+    command: "git push origin HEAD:refs/for/{{.CheckedOutBranch.Name}}"
+    context: 'global'
+    loadingText: 'pushing'
+  - key: b
+    command: tig blame -- {{.SelectedFile.Name}}
+    context: files
+    description: blame file at tree
+    subprocess: yes
+  - key: b
+    command: tig blame {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
+    context: commitFiles
+    description: blame file at revision
+    subprocess: yes
+  - key: B
+    command: tig blame -- {{.SelectedCommitFile.Name}}
+    context: commitFiles
+    description: blame file at tree
+    subprocess: yes
