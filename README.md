@@ -18,5 +18,8 @@ cp .dotter/<os>.toml local.toml
 ```bash
 ./dotter deploy
 ```
+## 软件安装
+- [nushell](./docs/nushell.md) 跨平台的shell
+- [wezterm](./docs/wezte)跨平台终端
 ## 参考
 1. https://github.com/SuperCuber/dotter
