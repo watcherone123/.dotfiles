@@ -27,6 +27,8 @@ cp .dotter/<os>.toml local.toml
 - [starship](./docs/starship.md)跨平台终端美化
 - [laygit](./docs/lazygit.md)
 - [yazi](./docs/yazi.md)终端文件管理
+- [ripgrep](https://github.com/BurntSushi/ripgrep) 全文搜索
+- [helix](https://github.com/helix-editor/helix)类vim编辑器，开箱即用
 ## 参考
 1. https://github.com/SuperCuber/dotter
 
