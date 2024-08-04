@@ -33,6 +33,7 @@ depends = []
 # git 配置-----------------------------------------------------
 [git.files]
 "git/.gitmessage" = "~/.gitmessage"
+"git/.gitconfig" = "~/.gitconfig"
 
 [settings]
 default_target_type = "automatic"
