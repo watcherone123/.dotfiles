@@ -13,6 +13,7 @@ depends = []
 # wezterm 配置-----------------------------------------------------
 [wezterm.files]
 "wezterm" = "~/.config/wezterm"
+"wezterm/backdrops/space.jpg" = { target = "~/.config/wezterm/backdrops/space.jpg", type = "symbolic" }
 
 # starship 配置-----------------------------------------------------
 [starship.files]
