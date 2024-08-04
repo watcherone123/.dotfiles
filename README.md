@@ -26,6 +26,7 @@ cp .dotter/<os>.toml local.toml
 - [wezterm](./docs/wezterm.md)跨平台终端
 - [starship](./docs/starship.md)跨平台终端美化
 - [laygit](./docs/lazygit.md)
+- [yazi](./docs/yazi.md)终端文件管理
 ## 参考
 1. https://github.com/SuperCuber/dotter
 
