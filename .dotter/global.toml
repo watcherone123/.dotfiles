@@ -18,6 +18,7 @@ depends = []
 # starship 配置-----------------------------------------------------
 [starship.files]
 "starship/starship.toml" = "~/.config/starship.toml"
+"starship/init.nu" = "~/.config/starship/init.nu"
 
 # nushell 配置-----------------------------------------------------
 [nushell.files]
