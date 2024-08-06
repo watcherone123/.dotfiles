@@ -56,9 +56,6 @@ separator = "│"
 [keys.normal]
 "C-s" = ":write"
 "C-j" = "save_selection"
-## Use system clipboard
-p = "paste_clipboard_before"
-y = "yank_main_selection_to_clipboard"
 
 [keys.normal.space]
 "." = "file_picker_in_current_buffer_directory"
