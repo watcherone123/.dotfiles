@@ -21,12 +21,9 @@ select = "underline"
 [editor.lsp]
 display-messages = true
 
-[editor.soft-wrap]
-enable = true
-
 [editor.indent-guides]
 render = true
-character = "╎" # Some characters that work well: "▏", "╎", "┆", "┊"
+character = "▏" # Some characters that work well: "▏", "╎", "┆", "┊"
 skip-levels = 0
 
 [editor.statusline]
@@ -59,3 +56,12 @@ separator = "│"
 
 [keys.normal.space]
 "." = "file_picker_in_current_buffer_directory"
+
+[editor.whitespace.render]
+space = "all"
+
+[editor.whitespace.characters]
+space = "·"
+
+[keys.insert]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
