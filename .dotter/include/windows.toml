@@ -6,3 +6,9 @@
 
 [yazi.files]
 "yazi/yazi.toml" = { target = "~/AppData/Roaming/yazi/config/yazi.toml", type = "symbolic" }
+
+[nvim.files]
+"nvim" = "~/AppData/Local/nvim"
+
+[nushell.files]
+"nushell" = "~/AppData/Roaming/nushell"

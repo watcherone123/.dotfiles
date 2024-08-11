@@ -22,7 +22,7 @@ depends = []
 
 # nushell 配置-----------------------------------------------------
 [nushell.files]
-"nushell" = "~/AppData/Roaming/nushell"
+"nushell" = "~/.config/nushell"
 
 # lazygit 配置-----------------------------------------------------
 [lazygit.files]
@@ -36,6 +36,10 @@ depends = []
 [git.files]
 "git/.gitmessage" = "~/.gitmessage"
 "git/.gitconfig" = "~/.gitconfig"
+
+# nvim 配置-----------------------------------------------------
+[nvim.files]
+"nvim" = "~/.config/nvim"
 
 [settings]
 default_target_type = "automatic"
