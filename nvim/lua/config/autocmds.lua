@@ -67,3 +67,11 @@ api.nvim_create_autocmd("VimResized", {
   desc = "autoresize windows on resizing operation",
   command = "wincmd =",
 })
+
+-- Disable autoformat for lua files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "c","cpp" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
