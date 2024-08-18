@@ -29,12 +29,15 @@ map_del("n", "<leader>uc")
 map_del("n", "<leader>uT")
 map_del("n", "<leader>ub")
 map_del("n", "<leader>uh")
+map_del("n", "<leader>`")
+map_del("n", "<leader>l")
+map_del("n", "<leader>bb")
 -- Increment/decrement
 key_map.set("n", "+", "<C-a>")
 key_map.set("n", "-", "<C-x>")
 -- 窗口配置
-key_map.set("n", "<C-x>1", "<C-W>v", { desc = "Split window Vertically" })
-key_map.set("n", "<C-x>2", "<C-W>s", { desc = "Split window Below" })
+key_map.set("n", "<leader>w/", "<C-W>v", { desc = "Split window Vertically" })
+key_map.set("n", "<leader>w-", "<C-W>s", { desc = "Split window Below" })
 -- Select all
 key_map.set("n", "<C-a>", "gg<S-v>G")
 
@@ -63,5 +66,5 @@ key_map.set("x", "c", '"_c')
 key_map.set("x", "p", '"_c<Esc>p')
 -- Go to beginning of command in command-line mode
 key_map.set("c", "<C-A>", "<HOME>")
--- Save key strokes (now we do not need to press shift to enter command mode).
-key_map.set({ "n", "x" }, ";", ":")
+key_map.set("n", "<leader>bb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
+key_map.set("n", "<leader><Space>", ":", { desc = "command" })
