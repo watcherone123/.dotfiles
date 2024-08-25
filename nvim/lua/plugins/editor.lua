@@ -32,16 +32,15 @@ return {
   -- with the active keybindings of the command you started typing.
   {
     "folke/which-key.nvim",
-    opts = {
-      spec = {
-        {
-          { "<leader>u", hidden = true },
-          { "<leader>:", hidden = true },
-          { "<leader>e", hidden = true },
-          { "h", group = "help" },
-        },
-      },
-    },
+    opts = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>u", hidden = true },
+        { "<leader>:", hidden = true },
+        { "<leader>e", hidden = true },
+        { "<leader>h", group = "help", icon = { icon = "󰋖", color = "cyan" } },
+      })
+    end,
     keys = {
       {
         "<leader>h?",
@@ -62,7 +61,7 @@ return {
     opts = {},
   },
   {
-    "ibhagwan/fzf-lua",
+    "nvim-telescope/telescope.nvim",
     keys = {
       {
         "<leader><space>",
