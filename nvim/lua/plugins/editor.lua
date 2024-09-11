@@ -62,6 +62,34 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
+    opts = {
+      pickers = {
+        find_files = {
+          theme = "ivy",
+        },
+        git_files = {
+          theme = "ivy",
+        },
+        grep_string = {
+          theme = "ivy",
+        },
+        live_grep = {
+          theme = "ivy",
+        },
+        oldfiles = {
+          theme = "ivy",
+        },
+        jumplist = {
+          theme = "ivy",
+        },
+        current_buffer_fuzzy_find = {
+          theme = "ivy",
+        },
+        buffers = {
+          theme = "ivy",
+        },
+      },
+    },
     keys = {
       {
         "<leader><space>",
@@ -79,6 +107,46 @@ return {
         "<leader>fb",
         false,
       },
+      -- {
+      --   "<leader>ff",
+      --   function ()
+      --     local builtin = require('telescope.builtin')
+      --     local themes = require('telescope.themes')
+      --     builtin.find_files(themes.get_ivy())
+      --   end, 
+      --   desc = "find files"
+      -- },
     },
+  },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = "Neogit",
+    keys = {
+      { "<Leader>gm", "<cmd>Neogit<CR>", desc = "Neogit" },
+    },
+    -- See: https://github.com/TimUntersberger/neogit#configuration
+    opts = {
+      disable_signs = false,
+      disable_context_highlighting = false,
+      disable_commit_confirmation = false,
+      signs = {
+        section = { ">", "v" },
+        item = { ">", "v" },
+        hunk = { "", "" },
+      },
+      integrations = {
+        diffview = true,
+      },
+    },
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    event = "UIEnter",
+    opts = { useDefaultKeymaps = true },
   },
 }
