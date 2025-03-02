@@ -1,0 +1,106 @@
+[
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "space b b": "tab_switcher::Toggle", // 选择标签页
+      "space b d": "pane::CloseActiveItem", // 关闭当前标签页
+      "space b o": "pane::CloseInactiveItems", //关闭非当前的标签页
+      "space b h": "workspace::Welcome", // 打开欢迎界面
+      "space b n": "pane::ActivateNextItem", // 打开下一个pane
+      "space b p": "pane::ActivatePrevItem", // 打开上一个pane
+      "space f f": "file_finder::Toggle", // 模糊查找文件
+      "space f c": "editor::CopyFileName", //拷贝文件名
+      "space f C": "workspace::CopyPath", //拷贝文件路径
+      "space .": "file_finder::Toggle", // 模糊查找文件
+      "space p t": "workspace::ToggleLeftDock", // 切换左侧的项目管理器
+      "space p p": "project_panel::ToggleFocus", // 跳转到项目管理器
+      "space p r": "projects::OpenRecent", // 打开最近的项目
+      "space s o": "outline::Toggle", // 切换outline
+      "space w /": "pane::SplitRight", // 水平分割窗口
+      "space w -": "pane::SplitDown", // 垂直分割窗口
+      "space w h": "workspace::ActivatePaneLeft", // 跳转左侧窗口
+      "ctrl-x h": "workspace::ActivatePaneLeft",
+      "space w l": "workspace::ActivatePaneRight", // 跳转右侧窗口
+      "ctrl-x l": "workspace::ActivatePaneRight", // 跳转右侧窗口
+      "space w j": "workspace::ActivatePaneDown",
+      "space w k": "workspace::ActivatePaneUp",
+      "space w o": "workspace::CloseInactiveTabsAndPanes", // 关闭非当前的窗口与tab
+      "space h k": "zed::OpenKeymap", //打开keymap
+      "space h i": "zed::OpenSettings", // 打开用户配置
+      "space '": "workspace::ToggleBottomDock", // 打卡终端
+      "space =": "editor::FormatSelections", // 格式化代码
+      "space space": "command_palette::Toggle", //打开命令行
+      "space ;": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ],
+      "space g g": ["task::Spawn", { "task_name": "start_lazygit" }],
+      "alt-right": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "g r": "editor::FindAllReferences",
+      ", r": "vim::PushReplaceWithRegister",
+      "g a": "editor::ToggleCodeActions",
+      "space g b": "editor::ToggleGitBlame"
+    }
+  },
+  {
+    "context": "OutlinePanel",
+    "bindings": {
+      "escape": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "q": "workspace::ToggleLeftDock",
+      "l": "project_panel::Open"
+    }
+  },
+  {
+    "context": "vim_mode == insert && !menu",
+    "bindings": {
+      // 插入模式下保存并退出到normal模式
+      "ctrl-s": ["workspace::SendKeystrokes", "ctrl-c ctrl-s"]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "workspace::NewTerminal",
+      "ctrl-d": "pane::CloseActiveItem",
+      "ctrl-t": "workspace::ToggleBottomDock",
+      "ctrl-shift-f": "workspace::ToggleZoom",
+      "ctrl-g": "workspace::ToggleBottomDock",
+      "alt-right": "tab_switcher::Toggle",
+      "ctrl-x k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": ["vim::PushSneak", {}],
+      "S": ["vim::PushSneakBackward", {}]
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "Editor && !menu || EmptyPanel",
+    "bindings": {
+      "ctrl-a": "editor::SelectAll" // vim default: increment
+    }
+  }
+]

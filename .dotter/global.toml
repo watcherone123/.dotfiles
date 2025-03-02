@@ -41,5 +41,9 @@ depends = []
 [nvim.files]
 "nvim" = "~/.config/nvim"
 
+# zed 配置
+[zed.files]
+"zed" = "~/AppData/Roaming/Zed"
+
 [settings]
 default_target_type = "automatic"
