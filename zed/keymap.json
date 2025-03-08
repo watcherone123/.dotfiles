@@ -1,5 +1,10 @@
 [
   {
+    "bindings": {
+      "ctrl-\\": "workspace::NewCenterTerminal"
+    }
+  },
+  {
     "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
       "space b b": "tab_switcher::Toggle", // 选择标签页
@@ -22,9 +27,9 @@
       "ctrl-x h": "workspace::ActivatePaneLeft",
       "space w l": "workspace::ActivatePaneRight", // 跳转右侧窗口
       "ctrl-x l": "workspace::ActivatePaneRight", // 跳转右侧窗口
-      "space w j": "workspace::ActivatePaneDown",
-      "space w k": "workspace::ActivatePaneUp",
-      "space w d": "workspace::CloseWindow",
+      "space w j": "workspace::ActivatePaneDown", // 跳转下侧窗口
+      "space w k": "workspace::ActivatePaneUp", // 跳转上侧窗口
+      "space w d": "workspace::CloseWindow", // 关闭当前窗口
       "space w o": "workspace::CloseInactiveTabsAndPanes", // 关闭非当前的窗口与tab
       "space h k": "zed::OpenKeymap", //打开keymap
       "space h i": "zed::OpenSettings", // 打开用户配置
@@ -32,23 +37,27 @@
       "space =": "editor::FormatSelections", // 格式化代码
       "space space": "command_palette::Toggle", //打开命令行
       "space ;": [
-        "editor::ToggleComments",
+        "editor::ToggleComments", // 注释
         {
           "advance_downwards": false
         }
       ],
       "space g g": ["task::Spawn", { "task_name": "start_lazygit" }],
-      "alt-right": "tab_switcher::Toggle"
+      "alt-right": "tab_switcher::Toggle",
+      "g h": "editor::MoveToBeginningOfLine", // 跳转到行首
+      "g l": "editor::MoveToEndOfLine" // 跳转到行尾
     }
   },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "g r": "editor::FindAllReferences",
+      "g r": "editor::FindAllReferences", // 查找引用
       ", r": "vim::PushReplaceWithRegister",
       "g a": "editor::ToggleCodeActions",
-      "space g b": "editor::ToggleGitBlame",
-      ", d": "editor::SwitchSourceHeader"
+      "space g b": "editor::ToggleGitBlame", //切换git blame
+      "space g d": "editor::ToggleSelectedDiffHunks", // 切换选中的diff hunks
+      "space g r": "git::Restore", // 恢复文件
+      ", d": "editor::SwitchSourceHeader" // 切换源文件与头文件
     }
   },
   {
@@ -58,8 +67,17 @@
     }
   },
   {
-    "context": "ProjectPanel",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "c": "project_panel::Copy",
+      "d": "project_panel::Delete",
+      "p": "project_panel::Paste",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y p": "workspace::CopyPath",
+      "y r": "workspace::CopyRelativePath",
       "q": "workspace::ToggleLeftDock",
       "l": "project_panel::Open"
     }
@@ -72,15 +90,22 @@
     }
   },
   {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "ctrl-n": "workspace::NewTerminal",
       "ctrl-d": "pane::CloseActiveItem",
-      "ctrl-t": "workspace::ToggleBottomDock",
       "ctrl-shift-f": "workspace::ToggleZoom",
       "ctrl-g": "workspace::ToggleBottomDock",
-      "alt-right": "tab_switcher::Toggle",
-      "ctrl-x k": "workspace::ActivatePaneUp"
+      "alt-right": "tab_switcher::Toggle"
     }
   },
   {
