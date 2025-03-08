@@ -29,6 +29,6 @@ cp .dotter/<os>.toml local.toml
 - [yazi](./docs/yazi.md)终端文件管理
 - [ripgrep](https://github.com/BurntSushi/ripgrep) 全文搜索
 - [helix](https://github.com/helix-editor/helix)类vim编辑器，开箱即用
-- [zed](https://github.com/zed-industries/zed)zed文本编辑器,主力编辑器
+- [zed](./docs/zed.md)zed文本编辑器,主力编辑器
 ## 参考
 1. https://github.com/SuperCuber/dotter
