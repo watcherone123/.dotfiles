@@ -26,7 +26,6 @@
   "buffer_font_size": 16,
   "vim_mode": true,
   "show_whitespaces": "boundary",
-  "autosave": "on_focus_change",
   "theme": {
     "mode": "system",
     "light": "Gruvbox Dark Soft",
@@ -45,9 +44,15 @@
         "feature_snippets": true, // enable snippets
         "feature_paths": true // enable path completion
       }
+    },
+    "clangd": {
+      "binary": {
+        "path": "C:/Users/watch/AppData/Roaming/Zed/clangd/bin/clangd.exe"
+      }
     }
   },
   "file_types": {
-    "CMake": ["CMakeLists.txt"]
+    "CMake": ["CMakeLists.txt"],
+    "Kconfig": ["Kconfig", "kconfig_config"]
   }
 }

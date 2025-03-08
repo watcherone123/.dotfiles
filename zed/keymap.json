@@ -7,7 +7,7 @@
       "space b o": "pane::CloseInactiveItems", //关闭非当前的标签页
       "space b h": "workspace::Welcome", // 打开欢迎界面
       "space b n": "pane::ActivateNextItem", // 打开下一个pane
-      "space b p": "pane::ActivatePrevItem", // 打开上一个pane
+      "space b p": "pane::ActivateLastItem", // 打开上一个pane
       "space f f": "file_finder::Toggle", // 模糊查找文件
       "space f c": "editor::CopyFileName", //拷贝文件名
       "space f C": "workspace::CopyPath", //拷贝文件路径
@@ -24,6 +24,7 @@
       "ctrl-x l": "workspace::ActivatePaneRight", // 跳转右侧窗口
       "space w j": "workspace::ActivatePaneDown",
       "space w k": "workspace::ActivatePaneUp",
+      "space w d": "workspace::CloseWindow",
       "space w o": "workspace::CloseInactiveTabsAndPanes", // 关闭非当前的窗口与tab
       "space h k": "zed::OpenKeymap", //打开keymap
       "space h i": "zed::OpenSettings", // 打开用户配置
@@ -46,7 +47,8 @@
       "g r": "editor::FindAllReferences",
       ", r": "vim::PushReplaceWithRegister",
       "g a": "editor::ToggleCodeActions",
-      "space g b": "editor::ToggleGitBlame"
+      "space g b": "editor::ToggleGitBlame",
+      ", d": "editor::SwitchSourceHeader"
     }
   },
   {
@@ -100,7 +102,15 @@
   {
     "context": "Editor && !menu || EmptyPanel",
     "bindings": {
-      "ctrl-a": "editor::SelectAll" // vim default: increment
+      "ctrl-a": "editor::SelectAll", // vim default: increment
+      "ctrl-p": [
+        "task::Spawn",
+        { "task_name": "File Finder", "reveal_target": "center" }
+      ],
+      "ctrl-f": [
+        "task::Spawn",
+        { "task_name": "Find in Files", "reveal_target": "center" }
+      ]
     }
   }
 ]
