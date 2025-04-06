@@ -20,14 +20,6 @@ api.nvim_create_autocmd({ "BufRead" }, {
   end,
 })
 
-api.nvim_create_autocmd({ "CursorMoved" }, {
-  pattern = "*",
-  group = yank_group,
-  callback = function()
-    vim.g.current_cursor_pos = vim.fn.getcurpos()
-  end,
-})
-
 -- Auto-create dir when saving a file, in case some intermediate directory does not exist
 api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = "*",
@@ -70,7 +62,7 @@ api.nvim_create_autocmd("VimResized", {
 
 -- Disable autoformat for lua files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c","cpp" },
+  pattern = { "c", "cpp" },
   callback = function()
     vim.b.autoformat = false
   end,

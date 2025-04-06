@@ -1,6 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 local key_map = vim.keymap
 local map_del = vim.keymap.del
 
@@ -33,12 +30,18 @@ map_del("n", "<leader>`")
 map_del("n", "<leader>l")
 map_del("n", "<leader>bb")
 map_del("n", ";")
+map_del("n", "<leader>n")
+map_del("n", "<leader>?")
+map_del("n", "<leader>S")
+map_del("n", "<leader>.")
 -- Increment/decrement
 key_map.set("n", "+", "<C-a>")
 key_map.set("n", "-", "<C-x>")
 -- 窗口配置
 key_map.set("n", "<leader>w/", "<C-W>v", { desc = "Split window Vertically" })
 key_map.set("n", "<leader>w-", "<C-W>s", { desc = "Split window Below" })
+key_map.set("n", "<leader>wq", ":close<CR>", { noremap = true, silent = true })
+key_map.set("n", "<leader>wo", ":only<CR>", { noremap = true, silent = true })
 -- Select all
 key_map.set("n", "<C-a>", "gg<S-v>G")
 
@@ -67,5 +70,6 @@ key_map.set("x", "c", '"_c')
 key_map.set("x", "p", '"_c<Esc>p')
 -- Go to beginning of command in command-line mode
 key_map.set("c", "<C-A>", "<HOME>")
-key_map.set("n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
-key_map.set("n", "<leader><Space>", ":", { desc = "command" })
+
+-- 设置 <leader>lr 快捷键来重启 LSP 服务
+key_map.set("n", "<leader>lr", ":LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSP" })
