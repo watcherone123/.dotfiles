@@ -30,7 +30,7 @@ depends = []
 
 # yazi 配置-----------------------------------------------------
 [yazi.files]
-"yazi/yazi.toml" = { target = "~/.config/yazi/yazi.toml", type = "symbolic" }
+"yazi/config" = "~/.config/yazi/config"
 
 # git 配置-----------------------------------------------------
 [git.files]
@@ -44,6 +44,11 @@ depends = []
 # zed 配置
 [zed.files]
 "zed" = "~/AppData/Roaming/Zed"
+
+# neovide 配置
+[neovide.files]
+"neovide/config.toml" = { target = "~/.config/lazygit/config.toml", type = "symbolic" }
+
 
 [settings]
 default_target_type = "automatic"

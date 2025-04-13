@@ -6,6 +6,7 @@ return {
     { "<leader>hk", "<cmd>FzfLua keymaps<cr>", desc = "Key Maps" },
     { "<leader>hM", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
     { "<leader>hh", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
+    { "<leader>bt", "<cmd>FzfLua btags<cr>", desc = "Tags" },
     { "<leader>fb", false },
     { "<leader>sa", false },
     { "<leader>sh", false },

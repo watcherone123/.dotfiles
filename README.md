@@ -9,7 +9,7 @@ git clone https://github.com/watcherone123/.dotfiles.git
     - Linux: linux.toml
     - Windows: windows.toml
 ```bash
-cp .dotter/<os>.toml local.toml
+从dotfile_priv下载local.toml配置文件
 ```
 3. [dotter使用技巧](./docs/dotter.md)
 
@@ -30,5 +30,7 @@ cp .dotter/<os>.toml local.toml
 - [ripgrep](https://github.com/BurntSushi/ripgrep) 全文搜索
 - [helix](https://github.com/helix-editor/helix)类vim编辑器，开箱即用
 - [zed](./docs/zed.md)zed文本编辑器,主力编辑器
+- [zoxide](./docs/zoxide.md)增强版本的cd
+- [neovide](./docs/neovide.md)vim gui
 ## 参考
 1. https://github.com/SuperCuber/dotter

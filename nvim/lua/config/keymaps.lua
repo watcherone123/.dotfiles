@@ -42,6 +42,9 @@ key_map.set("n", "<leader>w/", "<C-W>v", { desc = "Split window Vertically" })
 key_map.set("n", "<leader>w-", "<C-W>s", { desc = "Split window Below" })
 key_map.set("n", "<leader>wq", ":close<CR>", { noremap = true, silent = true })
 key_map.set("n", "<leader>wo", ":only<CR>", { noremap = true, silent = true })
+key_map.set({ "n", "v" }, "<leader>=", function()
+  LazyVim.format({ force = true })
+end, { noremap = true, silent = true, desc = "Format" })
 -- Select all
 key_map.set("n", "<C-a>", "gg<S-v>G")
 
@@ -73,3 +76,5 @@ key_map.set("c", "<C-A>", "<HOME>")
 
 -- 设置 <leader>lr 快捷键来重启 LSP 服务
 key_map.set("n", "<leader>lr", ":LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSP" })
+-- Remove trailing whitespace characters
+key_map.set("n", "<leader>c<space>", "<cmd>StripTrailingWhitespace<cr>", { desc = "remove trailing space" })

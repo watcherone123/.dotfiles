@@ -17,4 +17,22 @@ return {
       }
     end,
   },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    init = function()
+      -- foreground option can be material, mix, or original
+      vim.g.gruvbox_material_foreground = "original"
+      --background option can be hard, medium, soft
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_better_performance = 1
+    end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox-material",
+    },
+  },
 }

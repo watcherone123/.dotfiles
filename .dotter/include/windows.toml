@@ -5,10 +5,14 @@
 "lazygit/config.yml" = { target = "~/AppData/Local/lazygit/config.yml", type = "symbolic" }
 
 [yazi.files]
-"yazi/yazi.toml" = { target = "~/AppData/Roaming/yazi/config/yazi.toml", type = "symbolic" }
+"yazi/config" = "~/AppData/Roaming/yazi/config"
 
 [nvim.files]
 "nvim" = "~/AppData/Local/nvim"
 
 [nushell.files]
 "nushell" = "~/AppData/Roaming/nushell"
+
+# neovide 配置
+[neovide.files]
+"neovide/config.toml" = { target = "~/AppData/Roaming/neovide/config.toml", type = "symbolic" }
