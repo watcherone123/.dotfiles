@@ -21,9 +21,6 @@ return {
     },
   },
   {
-    "HiPhish/rainbow-delimiters.nvim",
-  },
-  {
     "stevearc/conform.nvim",
     opts = function()
       ---@type conform.setupOpts
@@ -97,31 +94,6 @@ return {
       vim.g.undotree_DiffCommand = "difft"
     end,
     keys = { { "<leader><F5>", "<cmd>UndotreeToggle<cr>", desc = "Undotree" } },
-  },
-  {
-    "luukvbaal/statuscol.nvim",
-    config = function()
-      require("config.nvim-statuscol")
-    end,
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = "kevinhwang91/promise-async",
-    event = "VeryLazy",
-    opts = {},
-    init = function()
-      vim.o.foldcolumn = "1" -- '0' is not bad
-      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-      vim.o.foldlevelstart = 99
-      vim.o.foldenable = true
-    end,
-    config = function()
-      require("config.nvim-ufo")
-    end,
-  },
-  {
-    "tpope/vim-sleuth",
-    event = "VeryLazy",
   },
   {
     "nvim-treesitter/nvim-treesitter",
