@@ -50,4 +50,64 @@ function M.rand_element(seq)
   return seq[idx]
 end
 
+function M.zcd(path)
+  -- uv.chdir (no event?), fn.chdir, cmd.cd
+  vim.api.nvim_set_current_dir(path)
+  if vim.fn.executable("zoxide") == 1 then
+    vim.system({ "zoxide", "add", path })
+  end
+end
+local function is_directory(path)
+  local stat = vim.uv.fs_stat(path)
+  if stat then
+    return stat.type == "directory"
+  end
+  return false
+end
+
+local function is_file(path)
+  local stat = vim.uv.fs_stat(path)
+  if stat then
+    return stat.type == "file"
+  end
+  return false
+end
+-- 检查一下路径是文件还是文件名
+function M.check_path_type(path)
+  if is_directory(path) then
+    return 1
+  end
+
+  if is_file(path) then
+    return 2
+  end
+
+  return -1
+end
+function M.get_parent_directory(path)
+  local parent_dir = vim.fn.fnamemodify(path, ":h")
+  return parent_dir
+end
+
+local hf_event_notify = function(mod, msg, level, opts)
+  if vim.in_fast_event() then
+    vim.schedule(function()
+      vim.notify(string.format("[%s] %s", mod, msg), level, opts)
+    end)
+  else
+    vim.notify(string.format("[%s] %s", mod, msg), level, opts)
+  end
+end
+
+function M.info(mod, msg)
+  hf_event_notify(mod, msg, vim.log.levels.INFO, {})
+end
+
+function M.warn(mod, msg)
+  hf_event_notify(mod, msg, vim.log.levels.WARN, {})
+end
+
+function M.err(mod, msg)
+  hf_event_notify(mod, msg, vim.log.levels.ERROR, {})
+end
 return M

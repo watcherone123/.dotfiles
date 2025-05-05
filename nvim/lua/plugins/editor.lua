@@ -18,6 +18,36 @@ return {
       char = {
         keys = { "f", "F", "t", "T", ";" },
       },
+      jump = { nohlsearch = true },
+      prompt = {
+        win_config = {
+          border = "none",
+          -- Place the prompt above the statusline.
+          row = -3,
+        },
+      },
+      search = {
+        exclude = {
+          "notify",
+          "cmp_menu",
+          "noice",
+          "flash_prompt",
+          "qf",
+          function(win)
+            -- Floating windows from bqf.
+            if vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win)):match("BqfPreview") then
+              return true
+            end
+
+            -- Non-focusable windows.
+            return not vim.api.nvim_win_get_config(win).focusable
+          end,
+        },
+      },
+      modes = {
+        -- Enable flash when searching with ? or /
+        search = { enabled = true },
+      },
     },
   },
   {
@@ -147,6 +177,65 @@ return {
           node_decremental = "<bs>",
         },
       },
+      highlight = {
+        enable = true,
+        disable = function(lang, buf)
+          local max_filesize = 100 * 1024 -- 100 KB
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+        end,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = true,
+      },
+      query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = { "BufWrite", "CursorHold" },
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+      vim.defer_fn(function()
+        require("nvim-treesitter.install").update({ with_sync = true })
+      end, 0)
+    end,
+  },
+  {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup({})
+    end,
+  },
+  {
+    "gbprod/yanky.nvim",
+    opts = {
+      ring = { history_length = 20 },
+      highlight = { timer = 250 },
+    },
+    keys = {
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+      { "<leader>p", "<Plug>(YankyPutAfterLinewise)", desc = "Put yanked text in line below" },
+      { "<leader>P", "<Plug>(YankyPutBeforeLinewise)", desc = "Put yanked text in line above" },
+      { "[y", "<Plug>(YankyCycleForward)", desc = "Cycle forward through yank history" },
+      { "]y", "<Plug>(YankyCycleBackward)", desc = "Cycle backward through yank history" },
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yanky yank" },
     },
   },
+  -- {
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     -- local wk_reg = require("which-key.plugins.registers")
+  --     -- wk_reg.mappings = {
+  --     --   icon = { icon = "󰅍 ", color = "blue" },
+  --     --   plugin = "registers",
+  --     --   { '"', mode = { "n", "x" }, desc = "registers" },
+  --     --   { "<c-r>", mode = { "i", "c" }, desc = "registers" },
+  --     -- }
+  --   end,
+  -- },
 }

@@ -12,6 +12,27 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_particle_density = 10.0
   vim.g.neovide_cursor_vfx_opacity = 150.0
 end
+
+if vim.g.nvy then
+  vim.o.guifont = "FiraCode Nerd Font:h12"
+end
+-- 性能优化设置
+vim.opt.updatetime = 100 -- 减少更新延迟
+vim.opt.timeoutlen = 300 -- 减少等待时间
+vim.opt.ttimeoutlen = 10 -- 减少终端等待时间
+vim.opt.synmaxcol = 200 -- 限制语法高亮列数
+vim.opt.hidden = true -- 允许隐藏缓冲区
+vim.opt.history = 100 -- 命令历史记录
+vim.opt.undolevels = 1000 -- 撤销历史记录
+
+-- 文件系统优化
+vim.opt.swapfile = false -- 禁用交换文件
+vim.opt.backup = false -- 禁用备份文件
+vim.opt.writebackup = false -- 禁用写入备份
+
+-- 内存优化
+vim.opt.maxmempattern = 2000 -- 限制模式匹配内存使用
+
 -- 设置空行（end of buffer）的填充字符为空格，去除默认的 ~ 符号
 vim.opt.fillchars = { eob = " " }
 -- 搜索时忽略大小写

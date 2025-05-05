@@ -48,9 +48,6 @@ end, { noremap = true, silent = true, desc = "Format" })
 -- Select all
 key_map.set("n", "<C-a>", "gg<S-v>G")
 
--- Paste non-linewise text above or below current line, see https://stackoverflow.com/a/1346777/6064933
-key_map.set("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
-key_map.set("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
 -- Move the cursor based on physical lines, not the actual lines.
 key_map.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 key_map.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
@@ -61,7 +58,7 @@ key_map.set({ "n", "x" }, "gh", "^")
 key_map.set({ "n", "x" }, "gl", "g_")
 -- Change current working directory locally and print cwd after that,
 -- see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
-key_map.set("n", "<leader>fd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
+-- key_map.set("n", "<leader>fd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
 -- Change text without putting it into the vim register,
 -- see https://stackoverflow.com/q/54255/6064933
 key_map.set("n", "c", '"_c')

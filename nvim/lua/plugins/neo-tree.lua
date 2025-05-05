@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = false,
   keys = {
     { "<leader>e", ":Neotree reveal_force_cwd<CR>", desc = "NeoTree", silent = true },
     { "<leader>fe", ":Neotree reveal_force_cwd<CR>", desc = "NeoTree", silent = true },
@@ -26,5 +27,9 @@ return {
         },
       },
     },
+  },
+  {
+    "nvimdev/dashboard-nvim",
+    enabled = false,
   },
 }

@@ -15,6 +15,7 @@ return {
           readonly_icon = " 󰌾 ",
         }),
       }
+      opts.sections.lualine_z = {}
     end,
   },
   {
@@ -27,6 +28,7 @@ return {
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_enable_italic = 1
       vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_visual = "reverse"
     end,
   },
   {
@@ -34,5 +36,9 @@ return {
     opts = {
       colorscheme = "gruvbox-material",
     },
+  },
+  { "folke/snacks.nvim", opts = { dashboard = { enabled = false } } },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
   },
 }
