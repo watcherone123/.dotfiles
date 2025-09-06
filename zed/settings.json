@@ -10,18 +10,37 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "assistant": {
+  "agent": {
+    "default_profile": "ask",
     "default_model": {
       "provider": "openai",
       "model": "gpt-4"
-    },
-    "version": "2"
+    }
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
   },
   "auto_update_extensions": {
     "neocmake": false
   },
+  "outline_panel": {
+    "dock": "right",
+    "button": true
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "autosave": "on_focus_change",
   "icon_theme": "VSCode Icons (Dark)",
   "relative_line_numbers": true,
+  "buffer_font_family": "BlexMono Nerd Font Mono",
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "vim_mode": true,
@@ -32,7 +51,23 @@
     "dark": "One Dark"
   },
   "terminal": {
-    "copy_on_select": true
+    "env": {
+      "EDITOR": "zed --wait"
+    },
+    "copy_on_select": true,
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 16,
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".venv", "venv"],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "default"
+      }
+    },
+    "button": false
   },
   "lsp": {
     "scls": {
@@ -44,15 +79,29 @@
         "feature_snippets": true, // enable snippets
         "feature_paths": true // enable path completion
       }
-    },
-    "clangd": {
-      "binary": {
-        "path": "C:/Users/watch/AppData/Roaming/Zed/clangd/bin/clangd.exe"
-      }
     }
   },
   "file_types": {
     "CMake": ["CMakeLists.txt"],
     "Kconfig": ["Kconfig", "kconfig_config"]
-  }
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "history",
+    "show_close_button": "hover",
+    "show_diagnostics": "off"
+  },
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50,
+    "toggle_on_modifiers_press": null
+  },
+  "preferred_line_length": 100
 }
